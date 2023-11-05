@@ -1,10 +1,11 @@
 // https://www.photopea.com/#%7B%22files%22%3A%5B%22https%3A%2F%2Fwww.photopea.com%2Fapi%2Fimg2%2Fpug.png%22%5D%2C%22environment%22%3A%7B%22plugins%22%3A%5B%7B%22name%22%3A%22pgf2%22%2C%22url%22%3A%22http%3A%2F%2Flocalhost%3A1995%2F%22%2C%22icon%22%3A%22https%3A%2F%2Fen.wikipedia.org%2Fstatic%2Ffavicon%2Fwikipedia.ico%22%7D%5D%7D%7D
 
-function handleFinalImage(data) {
+async function handleFinalImage(data) {
     let b64uri = data[1];
-    let img = new Image();
-    img.src = b64uri;
-    document.body.appendChild(img);
+    await Photopea.runScript(window.parent, "app.activeDocument.activeLayer = app.activeDocument.layers[0];");
+    await addImageAndWait(window.parent, b64uri);
+    await Photopea.runScript(window.parent, "app.activeDocument.activeLayer.blendMode = 'scrn';");
+    await Photopea.runScript(window.parent, "app.activeDocument.activeLayer.name = 'Lens Flare (Progen Flares 2)';");
 }
 
 function createPopup(w, h, imgURI) {
@@ -36,4 +37,9 @@ function createPopup(w, h, imgURI) {
     });
 }
 
-createPopup(1920, 1080, "https://i.imgur.com/wVIP3ow.png");
+getDocumentAsImage(window.parent).then(function(img) {
+    console.log(img);
+    img.addEventListener("load", function() {
+        createPopup(img.width, img.height, img.src);
+    });
+});
