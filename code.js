@@ -32,8 +32,8 @@ function createPopup(w, h, imgURI) {
         }
         if (e.data[0] == "finalImage") {
             handleFinalImage(e.data);
+            popup.window.close();
         }
-        console.log(e.data);
     });
 }
 
