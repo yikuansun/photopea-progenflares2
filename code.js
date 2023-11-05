@@ -38,7 +38,6 @@ function createPopup(w, h, imgURI) {
 }
 
 getDocumentAsImage(window.parent).then(function(img) {
-    console.log(img);
     img.addEventListener("load", function() {
         createPopup(img.width, img.height, img.src);
     });
