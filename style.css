@@ -1,0 +1,23 @@
+body {
+    background-color: #242424;
+    color: whitesmoke;
+}
+
+#messagebox {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#loadingSpinner {
+    animation: spin 1s infinite;
+    width: 48px;
+    padding: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
