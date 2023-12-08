@@ -11,7 +11,7 @@ async function handleFinalImage(data) {
 }
 
 function createPopup(w, h, imgURI) {
-    let pluginURL = new URL("http://localhost:1995/app_test/index.html"); // https://progenflares2-web-preview-git-deploytoweb-yikuansun.vercel.app
+    let pluginURL = new URL("http://localhost:1995/app_test/index.html");
     pluginURL.searchParams.set("popupPlugin", "yeah");
     pluginURL.searchParams.set("docWidth", w);
     pluginURL.searchParams.set("docHeight", h);
@@ -28,7 +28,7 @@ function createPopup(w, h, imgURI) {
     }
     
     let popup = window.open(pluginURL, "_blank", windowFeatures);
-    popup.window.addEventListener("message", function (e) {
+    window.addEventListener("message", function (e) {
         if (e.data[0] == "pluginStatus" && e.data[1] == "ready") {
             popup.window.postMessage(["refImage", imgURI]);
         }
