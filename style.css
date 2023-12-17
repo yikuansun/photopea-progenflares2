@@ -15,7 +15,7 @@ body {
 }
 
 #loadingSpinner {
-    animation: spin 1s infinite;
+    animation: spin 1s linear infinite;
     width: 42px;
     padding: 16px;
 }
