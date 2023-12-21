@@ -41,15 +41,22 @@ function createPopup(w, h, imgURI) {
     return popup;
 }
 
-getDocumentAsImage(window.parent).then(function(img) {
-    img.addEventListener("load", function() {
-        let popup = createPopup(img.width, img.height, img.src);
-        $("#loadingSpinner").style.display = "none";
-        if (popup) {
-            $("#message").innerText = "Plugin opened in a popup window.";
-        }
-        else {
-            $("#message").innerText = "Plugin failed to open.\n\nPlease allow popups from Photopea.";
-        }
+function startPlugin() {
+    $("#loadingSpinner").style.display = "inline-block";
+    $("#message").style.innerText = "Loading plugin...\n\nPlease ensure that popups are allowed.";
+
+    getDocumentAsImage(window.parent).then(function(img) {
+        img.addEventListener("load", function() {
+            let popup = createPopup(img.width, img.height, img.src);
+            $("#loadingSpinner").style.display = "none";
+            if (popup) {
+                $("#message").innerText = "Plugin opened in a popup window.";
+            }
+            else {
+                $("#message").innerText = "Plugin failed to open.\n\nPlease allow popups from Photopea.";
+            }
+        });
     });
-});
+}
+
+window.addEventListener("load", startPlugin);
