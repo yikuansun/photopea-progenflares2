@@ -20,6 +20,14 @@ body {
     padding: 16px;
 }
 
+#topBanner {
+    position: fixed;
+    top: 10px;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: calc(min(100vw - 20px, 180px));
+}
+
 @keyframes spin {
     0% { transform: rotate(0); }
     100% { transform: rotate(360deg); }
