@@ -49,7 +49,7 @@ getDocumentAsImage(window.parent).then(function(img) {
             $("#message").innerText = "Plugin opened in a popup window.";
         }
         else {
-            $("#message").innerText = "Plugin failed to open.\nPlease allow popups from Photopea.";
+            $("#message").innerText = "Plugin failed to open.\n\nPlease allow popups from Photopea.";
         }
     });
 });
