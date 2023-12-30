@@ -56,6 +56,26 @@ body {
     border-radius: 7px;
 }
 
+#bottomStuff {
+    position: fixed;
+    bottom: 10px;
+    color: whitesmoke;
+    text-align: center;
+    left: 50vw;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 12px;
+    user-select: none;
+}
+
+a {
+    color: deepskyblue;
+}
+
+a:hover {
+    color: dodgerblue;
+}
+
 @keyframes spin {
     0% { transform: rotate(0); }
     100% { transform: rotate(360deg); }
