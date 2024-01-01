@@ -11,7 +11,7 @@ async function handleFinalImage(data) {
 }
 
 function createPopup(w, h, imgURI) {
-    let pluginURL = new URL("http://localhost:1995/app_test/index.html");
+    let pluginURL = new URL(location.origin + "/app_test/index.html");
     pluginURL.searchParams.set("popupPlugin", "yeah");
     pluginURL.searchParams.set("docWidth", w);
     pluginURL.searchParams.set("docHeight", h);
