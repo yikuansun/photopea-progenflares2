@@ -69,6 +69,26 @@ body {
     filter: drop-shadow(2px 4px 6px black);
 }
 
+#reloadButton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 0 0 0 10px;
+    background-color: #00000064;
+    background-image: url("./reload.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#reloadButton:hover {
+    transform: scale(1.28);
+}
+
 a {
     color: deepskyblue;
 }

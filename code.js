@@ -60,3 +60,5 @@ function startPlugin() {
 }
 
 window.addEventListener("load", startPlugin);
+
+$("#reloadButton").addEventListener("click", function() { location.reload(); });
