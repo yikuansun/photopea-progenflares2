@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="refresh" content="0; url=https://www.photopea.com/#%7B%22files%22%3A%5B%22https%3A%2F%2Fwww.photopea.com%2Fapi%2Fimg2%2Fpug.png%22%5D%2C%22environment%22%3A%7B%22plugins%22%3A%5B%7B%22name%22%3A%22pgf2%22%2C%22url%22%3A%22http%3A%2F%2Flocalhost%3A1995%2F%22%2C%22icon%22%3A%22https%3A%2F%2Flunalgraphics.github.io%2Fblog-images%2Fpgf2icon120.png%22%7D%5D%7D%7D" />
+        <script>
+            let photopeaURL = new URL("https://photopea.com");
+            let options = {
+                files: [ "https://www.photopea.com/api/img2/pug.png" ],
+                environment: {
+                    plugins: [],
+                },
+            };
+            options["environment"]["plugins"].push({
+                name: "pgf2 alpha test",
+                icon: new URL("./icon120.png", location),
+                url: new URL("./index.html", location),
+            });
+            photopeaURL.hash = JSON.stringify(options);
+            location.replace(photopeaURL);
+        </script>
     </head>
 </html>
