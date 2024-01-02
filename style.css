@@ -91,6 +91,8 @@ body {
 
 a {
     color: deepskyblue;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
 a:hover {
