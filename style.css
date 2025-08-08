@@ -33,8 +33,13 @@ body {
 
 #loadingSpinner {
     animation: spin 1s linear infinite;
+    display: block;
     width: 42px;
-    padding: 16px;
+    height: 42px;
+    border: 4px solid grey;
+    border-radius: 100%;
+    border-top-color: #f27700;
+    margin: 16px;
 }
 
 #topBanner {
